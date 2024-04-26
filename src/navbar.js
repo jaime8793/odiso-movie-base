@@ -2,33 +2,29 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div
-      className=" d-flex align-items-center justify-content-around"
-      style={{ height: "50px", backgroundColor: "#032541" }}
-    >
-      <span classname="">
-        <a classname=" link " href="#">
-          OMDB
-        </a>
+    <div class="container noise">
+      <div>
+        <span>
+          <a href="Logo">Movie</a>
         </span>
-        <span classname="">
-        <a classname="link" href="#">
-          Movies </a>
+        <span>
+          <a href="Profile">Movie</a>
         </span>
-        <span classname="">
-        <a classname="link" href="#"/>
-          TV Shows
+        <span>
+          <a href="Movie">Movie</a>
         </span>
-        <span classname="">
-        <a classname="link" href="#">
-          Actors
-        </a>
+        <span>
+          <a href="TV Show">Movie</a>
         </span>
-        <span classname="">
-        <a classname="link" href="#">
-          More
-        </a>
+        <span>
+          <a href="Anime">Movie</a>
         </span>
+      </div>
+      <div>
+        <span>
+          <a href="Search">Search</a>
+        </span>
+      </div>
     </div>
   );
 }
