@@ -6,8 +6,8 @@ import Homepage from './homepage';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Homepage/>
+      <Navbar />
+      <Homepage />
     </div>
   );
 }
