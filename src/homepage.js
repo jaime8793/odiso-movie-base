@@ -1,5 +1,5 @@
 import React from "react";
-import moviePage from "./moviePage";
+import MoviePage from "./moviePage";
 
 function Homepage() {
   return (
@@ -8,7 +8,7 @@ function Homepage() {
         <p>The best thing that happened to movies search history</p>
       </div>
           <div>
-              <moviePage/>
+              <MoviePage/>
       </div>
     </div>
   );

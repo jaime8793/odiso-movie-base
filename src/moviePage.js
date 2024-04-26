@@ -1,7 +1,7 @@
-import movieTile from "./movieTiles";
+import MovieTile from "./movieTiles";
 
-function moviePage() {
-    
+function MoviePage() {
+    <MovieTile/>
 }
 
-export default moviePage;
+export default MoviePage;
