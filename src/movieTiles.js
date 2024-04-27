@@ -1,5 +1,3 @@
-//import React, { useEffect, useState } from "react";
-//import axios from "axios";
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
@@ -28,25 +26,36 @@ function MovieTile() {
 
     fetchData();
   }, []);
-    
-    //const stringfiedjson = JSON.stringify(config, null, 2);
-
+  
   return (
     <div>
       {config && (
-        <div>
-          <h2>Configuration</h2>
-          <pre>
-            {config.results.map((movie, index) => {
-              return (
-                <div key={index}>
-                  <p>{movie.title}</p>
+        <div class="movie-card-tile">
+          <h2>Popular Movies</h2>
+          <div className="card-container">
+            {config.results.map((movie, index) => (
+              <div key={index} className="card" style={{ width: "18rem" }}>
+                <img
+                  className="card-img-top"
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  alt={movie.title}
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{movie.title}</h5>
                   <p>{movie.vote_average}</p>
-                  <p>{movie.overview}</p>
+                  <p className="card-text">{movie.overview}</p>
+                  <div className="card-links">
+                    <a href="#" className="card-link">
+                      Card link
+                    </a>
+                    <a href="#" className="card-link">
+                      Another link
+                    </a>
+                  </div>
                 </div>
-              );
-            })}
-          </pre>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
@@ -54,19 +63,3 @@ function MovieTile() {
 }
 
 export default MovieTile;
-
-    
-    /*return (<>
-        {config.results((movie,index) => {
-            return (
-              <div key={index}>
-                <p>{movie.title}</p>
-                <p>{movie.vote_average}</p>
-                <p>{movie.overview}</p>
-              </div>
-            );
-         })}
-    </>);
-}
-
-export default MovieTile;*/

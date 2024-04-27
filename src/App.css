@@ -12,6 +12,13 @@
   height: 100%;
 }
 
+.movie-card-tile {
+  font-family: marlin-soft-basic;
+  //color: white;
+  //font-weight: 500;
+  //font-size: 24px;
+}
+
 
 .container {
   //margin: 0 auto;
