@@ -1,8 +1,16 @@
 import MovieTile from "./movieTiles";
 
 function MoviePage() {
-    
-    <MovieTile/>
+    return (
+        <>
+            <div>
+                <p>Movie Page</p>
+            </div>
+        <div>
+          <MovieTile />
+        </div>
+      </>
+    );
 }
 
 export default MoviePage;

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -26,13 +25,12 @@ function MovieTile() {
 
     fetchData();
   }, []);
-  
+
   return (
     <div>
       {config && (
         <div class="movie-card-tile">
-          <h2>Popular Movies</h2>
-          <div className="card-container">
+          <div className="card-container d-flex flex-wrap justify-content-between">
             {config.results.map((movie, index) => (
               <div key={index} className="card" style={{ width: "18rem" }}>
                 <img
