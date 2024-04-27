@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <div class="container noise navbar">
+    <div class="containers noise navbar">
       <div class="">
         <span>
           <a class=" text-white p-2 badge badge-primary " href="Logo">

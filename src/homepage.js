@@ -4,11 +4,11 @@ import MoviePage from "./moviePage";
 function Homepage() {
   return (
     <div>
-      <div class="sliding comments text-align">
+      <div class="second-header">
         <p>The best thing that happened to movies search history</p>
       </div>
-          <div>
-              <MoviePage/>
+      <div>
+        <MoviePage />
       </div>
     </div>
   );

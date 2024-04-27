@@ -32,9 +32,9 @@ function MovieTile() {
         <div class="movie-card-tile">
           <div className="card-container d-flex flex-wrap justify-content-between">
             {config.results.map((movie, index) => (
-              <div key={index} className="card" style={{ width: "18rem" }}>
+              <div key={index} className="card mt-2 mb-3 mr-2" style={{ width: "18rem" }}>
                 <img
-                  className="card-img-top"
+                  className="card-img-top "
                   src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                   alt={movie.title}
                 />

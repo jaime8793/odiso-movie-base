@@ -2,14 +2,14 @@ import MovieTile from "./movieTiles";
 
 function MoviePage() {
     return (
-        <>
+        <div class="movie-page">
             <div>
-                <p>Movie Page</p>
+                <p class="movie-page-text">Movie Page</p>
             </div>
         <div>
           <MovieTile />
         </div>
-      </>
+      </div>
     );
 }
 
