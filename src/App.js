@@ -2,7 +2,7 @@
 import './App.css';
 import Navbar from './navbar';
 import Homepage from './homepage';
-//import MovieTile from './movieTiles';
+import MovieTile from './movieTiles';
 
 function App() {
   return (
