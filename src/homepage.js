@@ -5,10 +5,9 @@ function Homepage() {
   return (
     <div>
       <div class="container-jagged"></div>
-      <div class="second-header">
+      <div class="second-header text-center">
         <p>The best thing that happened to movies search history</p>
       </div>
-      <div class="container-jagged"></div>
       <div>
         <MoviePage />
       </div>
