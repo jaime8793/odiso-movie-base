@@ -2,8 +2,11 @@
 import './App.css';
 import Navbar from './navbar';
 import Homepage from './homepage';
-import MovieTile from './movieTiles';
-import { BrowserRouter, Routes } from "react-router-dom";
+import Profile from './profile';
+//import MovieTile from './movieTiles';
+import Anime from './Movie-Genres/anime';
+import Netflix from './Movie-Genres/Netflix';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -11,8 +14,10 @@ function App() {
       <div className="App">
         <Navbar />
         <Routes>
-          <Homepage />
-          
+          <Route path="/" element={<Homepage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/tv shows" element={<Netflix/>} />
+          <Route path="/anime" element={<Anime/>} />
         </Routes>
       </div>
     </BrowserRouter>
@@ -20,3 +25,7 @@ function App() {
 }
 
 export default App;
+
+ /*<Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage />} />*/

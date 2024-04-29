@@ -1,5 +1,5 @@
 import React from "react";
-import MoviePage from "./moviePage";
+import Popular from "./Movie-Genres/Popular";
 
 function Homepage() {
   return (
@@ -9,7 +9,7 @@ function Homepage() {
         <p>The best thing that happened to movies search history</p>
       </div>
       <div>
-        <MoviePage />
+        <Popular />
       </div>
     </div>
   );
