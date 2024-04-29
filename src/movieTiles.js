@@ -8,13 +8,15 @@ function MovieTile() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc",
+          "https://api.themoviedb.org/3/movie/popular",
+
           {
             headers: {
               accept: "application/json",
               Authorization:
                 "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYzNhODk4YWYwNmVjZDFkMGNkODZmYTZjMzRjOWNkOSIsInN1YiI6IjY2MmI3YjNkNTAxY2YyMDExZmIzOTQ1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.70-yBmgUn18eoidsXYWZTtk3mK5ujNWzrycqBjlqPt8",
             },
+            params: { language: "en-US", page: "1" },
           }
         );
         setConfig(response.data);
