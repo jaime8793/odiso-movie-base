@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function MovieTile() {
+function FetchDatas(props) {
   const [config, setConfig] = useState(null);
+  //const [genre, setGenre] = useState('movie')
+  //const [category, setCategory] = useState('popular')
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://api.themoviedb.org/3/movie/popular",
+          `https://api.themoviedb.org/3/${props.category}/${props.genre}/${props.day}`,
 
           {
             headers: {
@@ -62,4 +64,4 @@ function MovieTile() {
   );
 }
 
-export default MovieTile;
+export default FetchDatas;

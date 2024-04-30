@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/tv shows" element={<Netflix/>} />
+          <Route path="/tv show" element={<Netflix/>} />
           <Route path="/anime" element={<Anime/>} />
         </Routes>
       </div>

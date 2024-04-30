@@ -1,4 +1,4 @@
-import MovieTile from "../movieTiles";
+import FetchDatas from "../fetchDatas";
 
 function Popular() {
   return (
@@ -7,7 +7,7 @@ function Popular() {
         <p class="movie-page-text">Popular Movie's right now</p>
       </div>
       <div>
-        <MovieTile />
+        <FetchDatas category="trending" genre="movie" day="day" />
       </div>
     </div>
   );
