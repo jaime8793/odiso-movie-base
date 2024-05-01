@@ -10,7 +10,7 @@ function FetchDatas(props) {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.themoviedb.org/3/${props.category}/${props.genre}/${props.day}`,
+          `https://api.themoviedb.org/3/${props.category}${props.genre}${props.day}`,
 
           {
             headers: {

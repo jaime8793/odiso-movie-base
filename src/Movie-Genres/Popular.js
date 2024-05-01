@@ -7,7 +7,7 @@ function Popular() {
         <p class="movie-page-text">Popular Movie's right now</p>
       </div>
       <div>
-        <FetchDatas category="trending" genre="movie" day="day" />
+        <FetchDatas category="/trending" genre="/movie" day="/day" />
       </div>
     </div>
   );
