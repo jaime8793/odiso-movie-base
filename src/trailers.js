@@ -38,7 +38,48 @@ function Trailers() {
         {config && (
           <div class="movie-card-tile">
             <div className="card-container d-flex flex-wrap justify-content-between">
-              {config.results.slice(0,3).map((movie, index) => (
+              {config.results.slice(0, 1).map((movie, index) => (
+                <div>
+                  <img
+                    className="bg-img  "
+                    src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
+                    alt={movie.backdrop_url}
+                  />
+                  <div
+                    key={index}
+                    className="card mt-2 mb-3 mr-2"
+                    style={{ width: "18rem" }}
+                  >
+                    <img
+                      className="card-img-top "
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      alt={movie.title}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{movie.title}</h5>
+                      <p>{movie.vote_average}</p>
+                      <p className="card-text">{movie.overview}</p>
+                      <div className="card-links">
+                        <a href="#" className="card-link">
+                          Card link
+                        </a>
+                        <a href="#" className="card-link">
+                          Another link
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>{" "}
+      <div>
+        {config && (
+          <div class="movie-card-tile">
+            <div className="card-container d-flex flex-wrap justify-content-between">
+              {config.results.slice(0, 3).map((movie, index) => (
                 <div
                   key={index}
                   className="card mt-2 mb-3 mr-2"
