@@ -1,12 +1,28 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { ColorExtractor } from "react-color-extractor";
 
 
 
 
 function Test2() {
+    
+    function getColors() {
+      const [imgColors, setImgColors] = useState();
 
-    const  [config,setConfig] = useState(null)
+      return (
+        <div>
+          <ColorExtractor getColors={(colors) => setImgColors(colors)}>
+            <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} />
+          </ColorExtractor>
+        </div>
+      );
+    }
+    getColors()
+
+    const [config, setConfig] = useState(null);
+     const movie_title = "Fallout";
+     const movie = {};
      useEffect(() => {
        const fetchData = async () => {
          try {
@@ -31,37 +47,106 @@ function Test2() {
        fetchData();
      }, []);
     return (
-    <>
+      <>
         {" "}
-      {config && (
-        <div className="main-first-screen bg-dark">
+        {config && (
+          <div className="main-first-screen d-inline-flex">
             {config.results.slice(0, 1).map((movie) => (
-            <div className="main-screen-left bg-primary position-relative p-3 ">
-                <div className="position-relative">
+              <div
+                className="main-screen-left bg-primary position-relative p-5 "
+                style={{ width: 1150, height: 800 }}
+                >
+                    
                 <img
-                    className="img-backdrop-left rounded "
-                    style={{ width: 1041, height: 631 }}
-                    src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
-                    alt={movie.backdrop_url}
+                  className="img-backdrop-left rounded "
+                  style={{ width: 1041, height: 631 }}
+                  src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                  alt={movie.backdrop_url}
                 />
                 <img
-                    className="img-poster-left rounded"
-                    style={{ height: 409, width: 281 , position: "absolute", top: "358px", left: "163px", borderRadius: "9.47166px"}}
+                  className="img-poster-left rounded  z-3"
+                  style={{
+                    height: 409,
+                    width: 281,
+                    position: "absolute",
+                    top: "358px",
+                    left: "163px",
+                    borderRadius: "9.47166px",
+                  }}
+                  src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                  alt={movie.title}
+                />
+
+                <div
+                  className="position-absolute text-white"
+                  style={{ left: "574px", top: "600px" }}
+                >
+                  <i className="play-trailer-left" alt="" />
+                  <p className="text-trailer-left">Hey {movie.title}</p>
+                </div>
+              </div>
+            ))}
+            <div className="main-screen-right flex">
+              <div className="top-screen-right flex">
+                <p className="top-screen-right-text">Featured Videos</p>
+                <button className="top-screen-right-button"></button>
+              </div>
+              <div className="bottom-screen-right flex">
+                <div className="bottom-screen-cards flex">
+                  <img
+                    className="img-poster-right"
                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                     alt={movie.title}
-                />
-                </div>
-                <div className="">
-                <i className="play-trailer-left" alt="" />
-                <p className="text-trailer-left">Hey {movie.title}</p>
-                    </div>
-                </div>
-            ))}
-                </div>
+                  />
+                  <div>
+                    <p className="text-movie-bottom">{`Watch the new ${movie_title} trailer`}</p>
 
-            )}
-        </>
-    )
+                    <div>
+                      <p className="trailer-duration">3:18</p>
+                      <i className="play-icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bottom-screen-right flex">
+                <div className="bottom-screen-cards flex">
+                  <img
+                    className="img-poster-right"
+                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                  <div>
+                    <p className="text-movie-bottom">{`Watch the new ${movie_title} trailer`}</p>
+
+                    <div>
+                      <p className="trailer-duration">3:18</p>
+                      <i className="play-icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bottom-screen-right flex">
+                <div className="bottom-screen-cards flex">
+                  <img
+                    className="img-poster-right"
+                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                  <div>
+                    <p className="text-movie-bottom">{`Watch the new ${movie_title} trailer`}</p>
+
+                    <div>
+                      <p className="trailer-duration">3:28</p>
+                      <i className="play-icon"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </>
+    );
 }
 
 
@@ -105,6 +190,22 @@ bottom: 0%;
 
 background: rgba(158, 139, 248, 0.3);
 filter: blur(250px);
+
+/* Frame 126 */
+
+/* Auto layout
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 23px;
+
+position: absolute;
+width: 584px;
+left: 474px;
+top: 64.86%;
+bottom: 20.27%;
+
 
 }*/
 
