@@ -47,15 +47,21 @@ function Test2() {
     <>
       {" "}
       {config && (
-        <div className="main-first-screen d-inline-flex">
+        <div
+          className="main-first-screen d-inline-flex"
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/original/${config.results[0].backdrop_path})`,
+            backgroundSize: "cover",
+          }}
+        >
           {config.results.slice(0, 1).map((movie) => (
             <div
-              className="main-screen-left  position-relative p-5 "
+              className="main-screen-left  position-relative p-5 z-1 "
               style={{
                 width: 1150,
                 height: 800,
-                background: "rgba(158, 139, 248, 0.25)",
-                //filter: "blur(250px)",
+                backdropFilter: "blur(250px)",
+                //background: "rgba(158, 139, 248, 0.25)",
               }}
             >
               <ColorExtractor getColors={(colors) => setImgColors(colors)}>
@@ -94,21 +100,43 @@ function Test2() {
             style={{
               height: "100vh",
               width: 370,
+              backdropFilter: "blur(250px)",
             }}
           >
             <div className="top-screen-right d-flex justify-content-between flex-grow">
               <p className="top-screen-right-text">Featured Videos</p>
               <button className="top-screen-right-button">Browse Button</button>
             </div>
-            <div className="bottom-screen-right flex">
+            <div
+              className="bottom-screen-right flex"
+              style={{ width: 371, height: 250 }}
+            >
               <div className="bottom-screen-cards flex">
-                <img
-                  className="img-poster-right img-fluid rounded"
-                  src={`https://image.tmdb.org/t/p/original/${config.results[0].backdrop_path}`}
-                  alt={movie.title}
-                />
-                {console.log(imgColors)}
-                {console.log(config.results[0])}
+                <div className="position-relative">
+                  <img
+                    className="img-poster-right img-fluid rounded"
+                    src={`https://image.tmdb.org/t/p/original/${config.results[0].backdrop_path}`}
+                    alt={movie.title}
+                    style={{
+                      position: "absolute",
+                      filter: "blur(2px)",
+                    }}
+                  />
+
+                  <img
+                    className="img-poster-right img-fluid rounded z-3 position-relative"
+                    src={`https://image.tmdb.org/t/p/original/${config.results[0].poster_path}`}
+                    alt={movie.title}
+                    style={{
+                      height: 140,
+                      width: 93,
+                      position: "relative",
+                      top: "35px",
+                      left: "24px",
+                      borderRadius: "9.47166px",
+                    }}
+                  />
+                </div>
 
                 <div>
                   <p className="text-movie-bottom">{`Watch the new ${config.results[0].title} trailer`}</p>
@@ -120,15 +148,38 @@ function Test2() {
                 </div>
               </div>
             </div>
-            <div className="bottom-screen-right flex">
-              <div className="bottom-screen-cards flex">
-                <img
-                  className="img-poster-right img-fluid rounded"
-                  src={`https://image.tmdb.org/t/p/original/${config.results[1].backdrop_path}`}
-                  alt={movie.title}
-                />
+            <div
+              className="bottom-screen-right flex "
+              style={{ width: 371, height: 250 }}
+            >
+              <div className="bottom-screen-cards flex ">
+                <div className="position-relative">
+                  <img
+                    className="img-poster-right img-fluid rounded"
+                    src={`https://image.tmdb.org/t/p/original/${config.results[1].backdrop_path}`}
+                    alt={movie.title}
+                    style={{
+                      position: "absolute",
+                      filter: "blur(2px)",
+                    }}
+                  />
+
+                  <img
+                    className="img-poster-right img-fluid rounded z-3 position-relative"
+                    src={`https://image.tmdb.org/t/p/original/${config.results[1].poster_path}`}
+                    alt={movie.title}
+                    style={{
+                      height: 140,
+                      width: 93,
+                      position: "relative",
+                      top: "35px",
+                      left: "24px",
+                      borderRadius: "9.47166px",
+                    }}
+                  />
+                </div>
                 <div>
-                  <p className="text-movie-bottom">{`Watch the new ${config.results[1].title} trailer`}</p>
+                  <p className="text-movie-bottom ">{`Watch the new ${config.results[1].title} trailer`}</p>
 
                   <div>
                     <p className="trailer-duration">3:18</p>
@@ -137,16 +188,36 @@ function Test2() {
                 </div>
               </div>
             </div>
-            <div className="bottom-screen-right flex">
-              <div
-                className="bottom-screen-cards flex "
-                style={{ width: 200, height: 100 }}
-              >
-                <img
-                  className="img-poster-right rounded img-fluid"
-                  src={`https://image.tmdb.org/t/p/original/${config.results[2].backdrop_path}`}
-                  alt={movie.title}
-                />
+            <div
+              className="bottom-screen-right flex"
+              style={{ width: 371, height: 183 }}
+            >
+              <div className="bottom-screen-cards flex ">
+                <div className="position-relative">
+                  <img
+                    className="img-poster-right img-fluid rounded"
+                    src={`https://image.tmdb.org/t/p/original/${config.results[2].backdrop_path}`}
+                    alt={movie.title}
+                    style={{
+                      position: "absolute",
+                      filter: "blur(2px)",
+                    }}
+                  />
+
+                  <img
+                    className="img-poster-right img-fluid rounded z-3 position-relative"
+                    src={`https://image.tmdb.org/t/p/original/${config.results[2].poster_path}`}
+                    alt={movie.title}
+                    style={{
+                      height: 140,
+                      width: 93,
+                      position: "relative",
+                      top: "35px",
+                      left: "24px",
+                      borderRadius: "9.47166px",
+                    }}
+                  />
+                </div>
                 <div>
                   <p className="text-movie-bottom">{`Watch the new ${config.results[2].title} trailer`}</p>
 
