@@ -1,12 +1,13 @@
 //import logo from './logo.svg';
-import './App.css';
-import Navbar from './navbar';
-import Homepage from './homepage';
-import Profile from './profile';
+import "./App.css";
+import Navbar from "./navbar";
+import Homepage from "./homepage";
+import Profile from "./profile";
 //import MovieTile from './movieTiles';
-import Anime from './Movie-Genres/anime';
-import Netflix from './Movie-Genres/Netflix';
+import Anime from "./Movie-Genres/anime";
+//import Netflix from './Movie-Genres/Netflix';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import TvShows from "./Movie-Genres/tv-shows";
 
 function App() {
   return (
@@ -16,8 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/tv show" element={<Netflix/>} />
-          <Route path="/anime" element={<Anime/>} />
+          <Route path="/tv show" element={<TvShows />} />
+          <Route path="/anime" element={<Anime />} />
         </Routes>
       </div>
     </BrowserRouter>
@@ -25,7 +26,3 @@ function App() {
 }
 
 export default App;
-
- /*<Route path="/" element={<Homepage />} />
-          <Route path="/" element={<Homepage />} />
-          <Route path="/" element={<Homepage />} />*/

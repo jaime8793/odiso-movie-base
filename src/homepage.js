@@ -8,8 +8,6 @@ function Homepage() {
   return (
     <div>
       <Test2/>
-      <Test/>
-      <Trailers />
       <div class="second-header text-center">
         <p>The best thing that happened to movies search history</p>
       </div>

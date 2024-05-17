@@ -1,4 +1,4 @@
-import FetchDatas from "./fetchDatas";
+//import FetchDatas from "./fetchDatas";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
