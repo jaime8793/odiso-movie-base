@@ -1,24 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { ColorExtractor } from "react-color-extractor";
 
 function Test2() {
-  /*function getColors() {
-      const [imgColors, setImgColors] = useState();
-
-      return (
-        <div>
-         
-            <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} />
-          </ColorExtractor>
-        </div>
-      );
-    }
-    getColors()*/
+ 
 
   const [config, setConfig] = useState(null);
-  const [imgColors, setImgColors] = useState();
-  const movie_title = "Fallout";
+  //const [imgColors, setImgColors] = useState();
+ // const movie_title = "Fallout";
   const movie = {};
   useEffect(() => {
     const fetchData = async () => {
@@ -60,18 +48,18 @@ function Test2() {
               style={{
                 width: 1150,
                 height: 800,
-                backdropFilter: "blur(250px)",
+                backdropFilter: "blur(150px)",
                 //background: "rgba(158, 139, 248, 0.25)",
               }}
             >
-              <ColorExtractor getColors={(colors) => setImgColors(colors)}>
+        
                 <img
                   className="img-backdrop-left rounded "
                   style={{ width: 1041, height: 631 }}
                   src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
                   alt={movie.backdrop_url}
                 />
-              </ColorExtractor>
+              
               <img
                 className="img-poster-left rounded  z-3"
                 style={{
