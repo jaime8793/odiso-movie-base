@@ -64,7 +64,7 @@ const HorizontalScrollCarousel = () => {
     <section
       ref={targetRef}
       className="position-relative bg-dark"
-      style={{ height: "300vh" }}
+      style={{ height: "200vh" }}
     >
       <div
         className="position-sticky"
@@ -94,12 +94,12 @@ const Card = ({ movie }) => {
   return (
     <div
       className="position-relative bg-light overflow-hidden"
-      style={{ height: "550px", width: "450px" }}
+      style={{ height: "500px", width: "330px" , borderRadius: "20px"}}
     >
       <div
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.poster_path})`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           //objectFit: "contain",
           backgroundPosition: "center",
         }}
