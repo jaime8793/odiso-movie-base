@@ -48,10 +48,10 @@ function FetchDatas(props) {
                   <p className="card-text">{movie.overview}</p>
                   <div className="card-links">
                     <a href="#" className="card-link">
-                      Card link
+                      Like
                     </a>
                     <a href="#" className="card-link">
-                      Another link
+                      Cast
                     </a>
                   </div>
                 </div>
