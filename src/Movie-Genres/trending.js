@@ -1,25 +1,21 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import axios from "axios";
-import React from "react";
 
 const Trending = () => {
   return (
-    <div className="bg-dark">
-      <div
-        className="d-flex align-items-center justify-content-center"
-        style={{ height: "12rem" }}
-      >
-        <span className="font-weight-bold text-uppercase text-secondary">
+    <div className="bg-neutral-900">
+      {/* Replaced inline styles and Bootstrap with Tailwind layout classes */}
+      <div className="flex h-48 items-center justify-center">
+        <span className="font-semibold uppercase tracking-widest text-neutral-500">
           Scroll down
         </span>
       </div>
+      
       <HorizontalScrollCarousel />
-      <div
-        className="d-flex align-items-center justify-content-center"
-        style={{ height: "12rem" }}
-      >
-        <span className="font-weight-bold text-uppercase text-secondary">
+      
+      <div className="flex h-48 items-center justify-center">
+        <span className="font-semibold uppercase tracking-widest text-neutral-500">
           Scroll up
         </span>
       </div>
@@ -34,7 +30,6 @@ const HorizontalScrollCarousel = () => {
   });
 
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
-
   const [config, setConfig] = useState(null);
 
   useEffect(() => {
@@ -45,15 +40,14 @@ const HorizontalScrollCarousel = () => {
           {
             headers: {
               accept: "application/json",
-              Authorization:
-                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhYzNhODk4YWYwNmVjZDFkMGNkODZmYTZjMzRjOWNkOSIsInN1YiI6IjY2MmI3YjNkNTAxY2YyMDExZmIzOTQ1ZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.70-yBmgUn18eoidsXYWZTtk3mK5ujNWzrycqBjlqPt8",
+              Authorization: `Bearer ${process.env.REACT_APP_TMDB_TOKEN}`, 
             },
             params: { language: "en-US", page: "1" },
           }
         );
         setConfig(response.data);
       } catch (error) {
-        console.error(error);
+        console.error("Failed to fetch trending movies:", error);
       }
     };
 
@@ -61,29 +55,19 @@ const HorizontalScrollCarousel = () => {
   }, []);
 
   return (
-    <section
-      ref={targetRef}
-      className="position-relative bg-dark"
-      style={{ height: "200vh" }}
-    >
-      <div
-        className="position-sticky"
-        style={{
-          top: 0,
-          height: "vh",
-          display: "flex",
-          alignItems: "center",
-          overflow: "hidden",
-        }}
-      >
+    <section ref={targetRef} className="relative h-[200vh] bg-neutral-900">
+      {/* Sticky container handling the horizontal scroll frame */}
+      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         {config ? (
-          <motion.div style={{ x }} className="d-flex gap-3">
-            {config.results.map((movie, index) => (
-              <Card movie={movie} key={index} />
+          <motion.div style={{ x }} className="flex gap-6 px-8">
+            {config.results.map((movie) => (
+              <Card movie={movie} key={movie.id} />
             ))}
           </motion.div>
         ) : (
-          <div>Loading...</div>
+          <div className="w-full text-center text-neutral-400 animate-pulse">
+            Loading...
+          </div>
         )}
       </div>
     </section>
@@ -92,31 +76,22 @@ const HorizontalScrollCarousel = () => {
 
 const Card = ({ movie }) => {
   return (
-    <div
-      className="position-relative bg-light overflow-hidden"
-      style={{ height: "500px", width: "330px" , borderRadius: "20px"}}
-    >
-      <div
+    <div className="group relative h-[500px] w-[330px] shrink-0 overflow-hidden rounded-2xl bg-neutral-800 shadow-2xl">
+      {/* We keep the background image inline because the URL is dynamic, 
+        but all positioning and sizing is handled by Tailwind. 
+      */}
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.poster_path})`,
-          backgroundSize: "contain",
-          //objectFit: "contain",
-          backgroundPosition: "center",
+          backgroundImage: `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`,
         }}
-        className="position-absolute w-100 h-100 "
-        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-      ></div>
-      <div className="position-absolute w-100 h-100 d-flex align-items-center justify-content-center">
-        <p
-          className="bg-gradient p-3 text-uppercase text-white font-weight-bold"
-          style={{
-            background:
-              "linear-gradient(to bottom right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0))",
-            backdropFilter: "blur(10px)",
-            fontSize: "2.5rem",
-          }}
-        >
+      />
+      
+      {/* Text overlay with Tailwind glassmorphism (bg-black/40 + backdrop-blur-md) */}
+      <div className="pointer-events-none absolute inset-0 flex items-end justify-center pb-6">
+        <p className="w-[90%] rounded-xl bg-black/40 p-4 text-center text-lg font-bold uppercase tracking-wide text-white shadow-lg backdrop-blur-md">
           {movie.title || movie.name}
         </p>
       </div>
@@ -125,42 +100,3 @@ const Card = ({ movie }) => {
 };
 
 export default Trending;
-
-/*const cards = [
-  {
-    url: "/imgs/abstract/1.jpg",
-    title: "Title 1",
-    id: 1,
-  },
-  {
-    url: "/imgs/abstract/2.jpg",
-    title: "Title 2",
-    id: 2,
-  },
-  {
-    url: "/imgs/abstract/3.jpg",
-    title: "Title 3",
-    id: 3,
-  },
-  {
-    url: "/imgs/abstract/4.jpg",
-    title: "Title 4",
-    id: 4,
-  },
-  {
-    url: "/imgs/abstract/5.jpg",
-    title: "Title 5",
-    id: 5,
-  },
-  {
-    url: "/imgs/abstract/6.jpg",
-    title: "Title 6",
-    id: 6,
-  },
-  {
-    url: "/imgs/abstract/7.jpg",
-    title: "Title 7",
-    id: 7,
-  },
-];
-*/

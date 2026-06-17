@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .body {
   overflow-x: hidden; /* hide horizontal overflow */
   overflow-y: auto; /* allow vertical scrolling if needed */
@@ -6,7 +11,7 @@
   margin: 0;
   padding: 0;
   background: #3139fb;
-  background-image: url(/home/jaime/odiso-movie-base/public/noise-light.png);
+  background-image: url(../public/noise-light.png);
   /*font-family: ABCFavoritMono;*/
   width: 100%;
   height: 100%;
@@ -24,7 +29,7 @@
   padding: 8px 8px 32px 8px;
   background: #dddccf;
   background: #3139fb;
-  background-image: url(/home/jaime/odiso-movie-base/public/noise-light.png);
+  background-image: url(../public/noise-light.png);
 }
 .container-jagged::after {
  /* background: linear-gradient(135deg, #ffffff 16px, transparent 0),
@@ -52,7 +57,7 @@
     rgba(33, 29, 180, 1) 40%,
     rgba(13, 104, 122, 1) 100%
   );*/
-  background-image: url(/home/jaime/odiso-movie-base/public/noise-light.png);
+  background-image: url(../public/noise-light.png);
 }
 
 .movie-page-text {
@@ -71,7 +76,7 @@
   style: normal;
 }
 .containers {
-  //margin: 0 auto;
+  margin: 0 auto;
   display: flex;
   width: 100%;
   height: 48px;
@@ -103,13 +108,13 @@
 
 .noise {
   background: #3139fb;
-  background-image: url(/home/jaime/odiso-movie-base/public/noise-light.png);
+  background-image: url(../public/noise-light.png);
 }
 
 @font-face {
   font-family: "ABCFavorite";
   src: local("ABCFavorit"),
-    url(/home/jaime/odiso-movie-base/src/ABC Favorit/ABCFavorit-Bold.otf)
+    url(./ABC Favorit/ABCFavorit-Bold.otf)
       format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
@@ -118,7 +123,7 @@
 @font-face {
   font-family: "marlin-soft-basica";
   src: local("MarlinSoftBasic-Regular"),
-    url(/home/jaime/odiso-movie-base/src/marlin-soft-basic/FontMesa - MarlinSoftBasic-Regular.otf)
+    url(./marlin-soft-basic/FontMesa - MarlinSoftBasic-Regular.otf)
       format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
@@ -127,7 +132,7 @@
 @font-face {
   font-family: "marlin-soft-basicb";
   src: local("MarlinSoftBasic-RegularItalic"),
-    url(/home/jaime/odiso-movie-base/src/marlin-soft-basic/FontMesa - MarlinSoftBasic-RegularItalic.otf)
+    url(./marlin-soft-basic/FontMesa - MarlinSoftBasic-RegularItalic.otf)
       format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
@@ -136,7 +141,7 @@
 @font-face {
   font-family: "marlin-soft-basicc";
   src: local("MarlinSoftBasicSlant-Regular"),
-    url(/home/jaime/odiso-movie-base/src/marlin-soft-basic/FontMesa - MarlinSoftBasicSlant-Regular.otf)
+    url(./marlin-soft-basic/FontMesa - MarlinSoftBasicSlant-Regular.otf)
       format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
@@ -145,7 +150,7 @@
 @font-face {
   font-family: "ABCFavoritd";
   src: local("ABCFavoritMono-Bold"),
-    url(/home/jaime/odiso-movie-base/src/ABC Favorit/ABCFavoritMono-Bold.otf)
+    url(./ABC Favorit/ABCFavoritMono-Bold.otf)
       format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
@@ -154,7 +159,7 @@
 @font-face {
   font-family: "ABCFavoritc";
   src: local("ABCFavoritMono-Book"),
-    url(/home/jaime/odiso-movie-base/src/ABC Favorit/ABCFavoritMono-Book.otf)
+    url(./ABC Favorit/ABCFavoritMono-Book.otf)
       format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
@@ -163,7 +168,7 @@
 @font-face {
   font-family: "ABCFavoritb";
   src: local("ABCFavoritMono-BoldItalic"),
-    url(/home/jaime/odiso-movie-base/src/ABC Favorit/ABCFavoritMono-BoldItalic.otf)
+    url(./ABC Favorit/ABCFavoritMono-BoldItalic.otf)
       format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
@@ -171,7 +176,7 @@
 @font-face {
   font-family: "ABCFavorita";
   src: local("ABCFavoritMono-BookItalic"),
-    url(/home/jaime/odiso-movie-base/src/ABC Favorit/ABCFavoritMono-BookItalic.otf)
+    url(./ABC Favorit/ABCFavoritMono-BookItalic.otf)
       format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
@@ -180,7 +185,7 @@
 @font-face {
   font-family: "marlin-soft-basice";
   src: local("MarlinSoftBasicSlant-Regular"),
-    url(/home/jaime/odiso-movie-base/src/marlin-soft-basic/MarlinSoftSQ-Medium.woff2)
+    url(./marlin-soft-basic/MarlinSoftSQ-Medium.woff2)
       format("opentype");
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
